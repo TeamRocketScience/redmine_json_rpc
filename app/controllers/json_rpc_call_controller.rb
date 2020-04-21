@@ -1,8 +1,8 @@
 class JsonRpcCallController < ApplicationController
   unloadable
 
-  before_filter :require_admin
-  before_filter :authorize_global
+  before_action :require_admin
+  before_action :authorize_global
   accept_api_auth :handle_rpc_request  
 
   def handle_rpc_request
